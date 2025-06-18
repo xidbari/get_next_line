@@ -6,7 +6,7 @@
 /*   By: aosman <aosman@42wolfsburg.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 21:09:28 by aosman            #+#    #+#             */
-/*   Updated: 2025/06/18 21:11:00 by aosman           ###   ########.fr       */
+/*   Updated: 2025/06/18 21:36:43 by aosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 // Declare your function prototype
 char *get_next_line(int fd);
 

@@ -6,13 +6,14 @@
 /*   By: aosman <aosman@42wolfsburg.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 21:08:24 by aosman            #+#    #+#             */
-/*   Updated: 2025/06/18 21:09:11 by aosman           ###   ########.fr       */
+/*   Updated: 2025/06/18 21:39:43 by aosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <stdio.h>
 
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 1024
@@ -129,13 +130,17 @@ char	*get_next_line(int fd)
 			break;
 		buffer[bytes] = '\0';
 		if (!stash)
+		{
 			stash = ft_strdup(buffer);
-		else
+			printf("DEBUG: Stash initialized: %s\n", stash ? stash : "(null)");
+		}else
 		{
 			tmp = ft_strjoin(stash, buffer);
+			printf("tmp: %s\n", tmp ? tmp : "(null)");
 			free(stash);
 			stash = tmp;
 		}
+		printf("DEBUG: Stash after read: %s\n", stash ? stash : "(null)");
 	}
 	return (extract_line(&stash));
 }
